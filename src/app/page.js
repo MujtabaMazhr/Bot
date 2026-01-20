@@ -26,11 +26,11 @@ export default function App(){
     <>
       <div style={{marginTop:"100vh"}}>
         <div style={{position:`${container_position[0]}`,top:`${container_position[1]}`}} className="container">
-          <div className="logo" style={{display:"flex",cursor:"pointer",width:"200px",fontFamily:`"Michroma",sans-serif`,position:"fixed",top:"60px",left:"50px",zIndex:"200"}}>
+          <div className="logo" style={{display:"flex",cursor:"pointer",width:"200px",fontFamily:`"Michroma",sans-serif`,position:"relative",top:"60px",left:"50px",zIndex:"200"}}>
             <img src="./bot_icon.png" style={{width:"65px",height:"65px",zIndex:"200",borderRadius:"40px"}}></img>
             <div style={{position:"relative",top:"19px",left:"7px",filter:"drop-shadow(5px 5px 10px #000000ff)"}}>Bot</div>
           </div>
-          <img src="./robot_bg_pic.webp" style={{objectFit:"cover",position:"relative",left:"0px",top:"0px",zIndex:"-1",width:"100vw",height:"100vh"}}></img>
+          <img src="./robot_bg_pic.webp" style={{objectFit:"cover",position:"relative",left:"0px",top:"-65px",zIndex:"-1",width:"100vw",height:"100vh"}}></img>
           <div className="content" style={{position:"relative",top:"-90vh"}}>{/*"animation2 800ms ease-out 2s 1 alternate forwards" */}
             <div style={{position:"relative",top:"420px",left:"-12px",fontSize:"larger",width:"300px",animation:`${animation1}`,opacity:"0"}}>Bot - Your AI Friend for Your Daily Routine</div>
             <div style={{position:"relative",top:"90vh"}}>
