@@ -32,7 +32,7 @@ export default function App(){
           </div>
           <img src="./robot_bg_pic.webp" style={{objectFit:"cover",position:"relative",left:"0px",top:"-65px",zIndex:"-1",width:"100vw",height:"100vh"}}></img>
           <div className="content" style={{position:"relative",top:"-90vh"}}>{/*"animation2 800ms ease-out 2s 1 alternate forwards" */}
-            <div style={{position:"relative",top:"420px",left:"-12px",fontSize:"larger",width:"300px",animation:`${animation1}`,opacity:"0"}}>Bot - Your AI Friend for Your Daily Routine</div>
+            <div style={{position:"relative",top:"340px",left:"-12px",fontSize:"larger",width:"300px",animation:`${animation1}`,opacity:"0"}}>Bot - Your AI Friend for Your Daily Routine</div>
             <div style={{position:"relative",top:"90vh"}}>
               <div style={{display:"flex"}} onMouseEnter={()=>{setShowEffect1(true);}} onMouseOut={()=>{setShowEffect1(false);}}>
                 <div style={{width:"50vw",display:"flex",justifyContent:"center",height:"30vh"}}><img src="./robot_pic.png" style={{width:"80%",objectFit:"contain",transform:"scaleX(-1)"}}></img></div>
