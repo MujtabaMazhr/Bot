@@ -1,0 +1,14 @@
+@font-face{
+    font-family: "Michroma";
+    src: url("/Michroma.ttf") format("truetype");
+    font-style: normal;
+}
+.container{font-family: "Michroma",sans-serif;}
+.input::placeholder{
+    position: relative;
+    left: 10px;
+    font-family: "Michroma",sans-serif;
+}
+
+.button{font-family: "Michroma",sans-serif;}
+.input{font-family: "Michroma",sans-serif;}

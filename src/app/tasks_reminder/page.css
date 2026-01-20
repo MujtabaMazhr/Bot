@@ -1,0 +1,255 @@
+@font-face{
+    font-family: "Michroma";
+    src: url("/Michroma.ttf") format("truetype");
+    font-style: normal;
+}
+.container{
+    font-family: "Michroma",sans-serif;
+}
+.bg_video{
+    width: 120vw;
+    height: 110vh;
+    object-fit: fill;
+    position: relative;
+    left: -10px;
+    top: 0px;
+    z-index: -2;
+    position: fixed;
+}
+.tasks_popup1{
+    background-color: black;
+    width: 55vw;
+    height: 300px;
+    position: relative;
+    top: 175px;
+    cursor: default;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+}
+.tasks_popup1::-webkit-scrollbar{
+    background-color: black;
+    border-radius: 8px;
+}
+.tasks_popup1::-webkit-scrollbar-thumb{
+    /*rgb(13, 95, 184)*/
+    background-color: white;
+    border-radius: 8px;
+}
+@keyframes navigation_icon_animation{
+    from{}
+    to{transform: rotateZ(90deg);}
+}
+@keyframes navigation_icon_animation2{
+    from{transform: rotateZ(90deg);}
+    to{transform: rotateZ(0deg);}
+}
+@keyframes sidebar_animation{
+    from{
+        position: relative;
+        left: 100vw;
+    }
+    to{
+        position: relative;
+        left: 45vw;
+    }
+}
+@keyframes sidebar_animation2{
+    from{
+        position: relative;
+        left: 45vw;
+    }
+    to{
+        position: relative;
+        left: 100vw;
+    }
+}
+@keyframes buttons_animation{
+    from{
+        position: relative;
+        left: 0px;
+    }
+    to{
+        position: relative;
+        left: 30px;
+    }
+}
+@keyframes buttons_animation2{
+    from{
+        position: relative;
+        left: 30px;
+    }
+    to{
+        position: relative;
+        left: 0px;
+    }
+}
+@media (max-width:870px){
+    .tasks_popup1{width: 90vw;}
+    .tasks_popup2{
+        position: relative;
+        left: -50px;
+    }
+    .popup_container{
+        position: relative;
+        left: -50px;
+    }
+}
+@keyframes animation1{
+    from{
+        position: relative;
+        left: -10px;
+        position: fixed;
+    }
+    to{
+        opacity: 0;
+        position: relative;
+        left: 100vw;
+        position: fixed;
+    }
+}
+.save_button{
+    display:flex;
+    justify-content:center;
+    background-image:linear-gradient(90deg, rgba(10,53,99,1) 0%,rgb(0, 0, 0) 50%,rgb(32, 127, 228) 100%);
+    width:75px;
+    border-radius:4px;
+    position:fixed;
+    font-size:medium;
+    background-size:140% 100%;
+    background-position:0% 0%;
+    transition:background-position ease-out 600ms;
+    margin-right: 30px;
+    z-index: 40;
+    cursor: default;
+}
+.save_button2{
+    display:flex;
+    justify-content:center;
+    background-image:linear-gradient(90deg, rgba(10,53,99,1) 0%,rgb(0, 0, 0) 50%,rgb(32, 127, 228) 100%);
+    width:75px;
+    height: 30px;
+    border-radius:4px;
+    font-size:medium;
+    background-size:140% 100%;
+    background-position:0% 0%;
+    transition:background-position ease-out 600ms;
+    z-index: 40;
+    cursor: default;
+}
+.save_button:hover{background-position: 100% 0%;}
+.save_button2:hover{background-position: 100% 0%;}
+.save_button_container{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 80px;
+}
+@media (max-width:650px){}
+@media (max-width:1090px){
+    .save_button_container{
+        position: relative;
+        top: 65px;
+        left: 35px;
+    }
+}
+.notes_container::-webkit-scrollbar{
+    background-color: white;
+    border-radius: 10px;
+}
+.notes_container::-webkit-scrollbar-thumb{
+    background-color: rgb(32, 127, 228);
+    border-radius: 10px;
+}
+.save_button3{
+    /*position:"fixed",left:"10px"*/
+    position: fixed;
+    left: 10px;
+    top: 65vh;
+    margin-top: 65px;
+    background-image:linear-gradient(90deg, rgba(10,53,99,1) 0%,rgb(0, 0, 0) 50%,rgb(32, 127, 228) 100%);
+    background-size:140% 100%;
+    background-position:0% 0%;
+    transition:background-position ease-out 600ms;
+    width:75px;
+    height: 30px;
+    display:flex;
+    justify-content:center;
+    border-radius: 8px;
+    z-index: 500;
+    cursor: default;
+}
+.save_button3:hover{background-position: 100% 0%;}
+/*style={{display:"flex",gap:"30px",position:"relative",left:"-130px",top:"100px"}}*/
+.notification_container{
+    display: flex;
+    gap: 30px;
+    position: relative;
+    left: 15px;
+    top: 100px;
+}
+@media (max-width:1065px){
+    .tasks_container{
+        left: 100px;
+    }
+}
+@media (max-width:600px){
+    .notification_container{top: 150px;}
+}
+@media (min-width:600px){
+    .notification_container{left: 0px;}
+}
+@keyframes container_animation{
+    from{}
+    to{opacity: .8;}
+}
+@keyframes container_animation2{
+    from{opacity: .8;}
+    to{opacity: 0;}
+}
+.values_div::-webkit-scrollbar{
+    background-color: black;
+    border-radius: 8px;
+}
+.values_div::-webkit-scrollbar-thumb{
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.notes_container::-webkit-scrollbar-corner{
+    border-radius: 18px;
+    background-color: white;
+}
+@keyframes timer_type1{
+    from{
+        font-size: x-small;
+        opacity: .6;
+    }
+    to{
+        font-size: medium;
+        opacity: 1;
+    }
+}
+@keyframes timer_type2{
+    from{
+        font-size: medium;
+        opacity: 1;
+    }
+    to{
+        font-size: x-small;
+        opacity: .6;
+    }
+}
+@keyframes timer_type3{
+    from{}
+    to{
+        font-size: medium;
+        opacity: 1;
+    }
+}
+@keyframes timer_type4{
+    from{}
+    to{
+        font-size: x-small;
+        opacity: .6;
+    }
+}

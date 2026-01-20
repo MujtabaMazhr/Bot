@@ -1,0 +1,39 @@
+@font-face{
+    font-family: "Michroma";
+    src: url("/Michroma.ttf") format("truetype");
+    font-style: normal;
+}
+.content{
+    font-family: "Michroma",sans-serif;
+    font-weight: 1;
+    position:relative;
+    top: -50vh;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+}
+@media (min-height:1140px){
+    .content{
+        position: relative;
+        top: -75vh;
+    }
+}
+.send_button{
+    background: linear-gradient(90deg, rgb(77,156,240) 0%,black 50%,rgb(12,107,208) 100%);
+    background-size: 140% 100%;
+    background-position: 0% 0%;
+    transition: background-position 530ms ease-in-out;
+}
+.send_button:hover{background-position: 100% 0%;}
+.bg_video{
+    width: 120vw;
+    height: 110vh;
+    object-fit: fill;
+    position: relative;
+    left: -10px;
+    top: -10vh;
+    z-index: -2;
+    position: fixed;
+    filter: blur(15px);
+}
+.content::-webkit-scrollbar{opacity: 0;}

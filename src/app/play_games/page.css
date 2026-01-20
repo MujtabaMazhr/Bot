@@ -1,0 +1,22 @@
+@font-face{
+    font-family: "Michroma";
+    src: url("/Michroma.ttf") format("truetype");
+    font-style: normal;
+}
+.container{
+    font-family: "Michroma",sans-serif;
+}
+@keyframes line1_animation{
+    from{}
+    to{
+        position: relative;
+        top: -800px;
+    }
+}
+@keyframes line2_animation{
+    from{}
+    to{
+        position: relative;
+        top: -350px;
+    }
+}

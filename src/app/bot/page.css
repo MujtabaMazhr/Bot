@@ -1,0 +1,123 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Saira:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap');*/
+
+/*.input{
+    font-family: '',sans-serif;
+}*/
+@font-face{
+    font-family: "Michroma";
+    src: url("/Michroma.ttf") format("truetype");
+    font-style: normal;
+}
+.container {
+    font-family: "Michroma",sans-serif;
+}
+.input{font-family: "Michroma",sans-serif;}
+.input::placeholder{
+    font-family: "Michroma",sans-serif;
+    font-size: xx-small;
+}
+/*.login{background-image: linear-gradient(to right, blue,black);}
+.login{background-image: linear-gradient(to right, rgb(77, 156, 240),black);}
+/*.login:hover{background-image: linear-gradient(to right, rgb(12, 107, 208),rgb(10, 10, 10));}
+.login:hover{animation: button1_animation 800ms ease-in 0s 1 alternate forwards;}*/
+.login {
+    background: linear-gradient(90deg, rgb(77, 156, 240) 0%, black 50%, rgb(12, 107, 208) 100%);
+    /*These Percentages sizes are divided equally in above all gradient colors*/
+    background-size: 140% 100%;
+    /*Initital Position*/
+    background-position: 0% 0%;
+    transition: background-position 530ms ease-in-out;
+}
+.login:hover {
+    /*Animated Position*/
+    background-position: 100% 0%;
+}
+.send_button{
+    background: linear-gradient(90deg, rgb(77,156,240) 0%,black 50%,rgb(12,107,208) 100%);
+    background-size: 140% 100%;
+    background-position: 0% 0%;
+    transition: background-position 530ms ease-in-out;
+}
+.send_button:hover{background-position: 100% 0%;}
+.apps_ui:hover{
+    transform: rotate(-180deg);
+    filter: brightness(.4);
+}
+@keyframes apps_animation{
+    from{}
+    to{
+        position: relative;
+        left: 55vw;
+        position: fixed;
+    }
+}
+@keyframes sidebar_animation{
+    from{
+        position: relative;
+        left: 0px;
+        position: fixed;
+    }
+    to{
+        position: relative;
+        left: -250px;
+        position: fixed;
+    }
+}
+@keyframes sidebar_animation2{
+    from{
+        position: relative;
+        left: -250px;
+        position: fixed;
+    }
+    to{
+        position: relative;
+        left: 0px;
+        position: fixed;
+    }
+}
+@keyframes button1_animation{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@keyframes button2_animation{
+    from{}
+    to{opacity: 1;}
+}
+@keyframes prompt_bar_animation{
+    from{}
+    to{
+        position: relative;
+        top: 60vh;
+        position: fixed;
+    }
+}
+@media (min-height:1000px){
+    @keyframes prompt_bar_animation{
+        from{}
+        to{
+            position: relative;
+            top: 45vh;
+            position: fixed;
+        }
+    }
+    @keyframes apps_ui_animation{
+        from{}
+        to{
+            position: relative;
+            top: 61vh;
+            position: fixed;
+        }
+    }
+}
+@keyframes apps_animation2{
+    from{
+        position: relative;
+        left: 55vw;
+        position: fixed;       
+    }
+    to{
+        position: relative;
+        left: 100vw;
+        position: fixed;
+    }
+}

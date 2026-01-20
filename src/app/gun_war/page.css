@@ -1,0 +1,159 @@
+
+@font-face{
+    font-family: "Michroma";
+    src: url("/Michroma.ttf") format("truetype");
+    font-style: normal;
+}
+.container{
+    font-family: "Michroma",sans-serif;
+}
+@media (min-height:860px){
+    .bg_image{
+        position: relative;
+        top: -35vh;
+    }
+    .move_bg_image{
+        position: relative;
+        top: -35vh;
+    }
+}
+@media (min-height:1100px){
+    .bg_image{
+        position: relative;
+        top: -50vh;
+    }
+    .move_bg_image{
+        position: relative;
+        top: -50vh;
+    }
+}
+@keyframes bgMoveRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-300px); }
+}
+
+.bg_move_right {
+  animation: bgMoveRight 3s linear infinite;
+}
+@keyframes object1_animation{
+    from{}
+    to{
+        position: relative;
+        top: 100px;
+    }
+}
+@keyframes button_animation1{
+    0%{
+        width: 85px;
+        height: 85px;
+    }
+    100%{
+        width: 78px;
+        height: 78px;
+    }
+}
+@keyframes button_animation3{
+    0%{
+        position: relative;
+        left: 183.5px;
+    }
+    100%{
+        position: relative;
+        left: 180px;
+    }
+}
+@keyframes button_animation2{
+    0%{
+        width: 85px;
+        height: 85px;
+    }
+    100%{
+        width: 78px;
+        height: 78px;
+    }
+}
+@keyframes button_animation4{
+    0%{
+        position: relative;
+        left: 206.5px;
+    }
+    100%{
+        position: relative;
+        left: 203px;
+    }
+}
+@keyframes gun_fire_animation{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@keyframes bullet_animation{
+    from{}
+    to{
+        position: relative;
+        left: 100vw;
+    }
+}
+@keyframes bullet_animation2{
+    from{}
+    to{
+        position: relative;
+        left: -100vw;
+    }
+}
+@keyframes weapon_info_animation1{
+    from{width: 0px;}
+    to{width: 190px;}
+}
+@keyframes weapon_info_animation2{
+    from{width: 0px;}
+    to{width: 190px;}
+}
+@keyframes weapon_info_animation3{
+    from{width: 0px;}
+    to{width: 155px;}
+}
+@keyframes bomb_animation{
+    from{}
+    to{width: 12px;}
+}
+@keyframes explosion1_animation{
+    from{}
+    to{opacity: 1;}
+}
+@keyframes explosion2_animation{
+    from{}
+    to{opacity: 1;}
+}
+@keyframes explosion3_animation{
+    from{}
+    to{opacity: 1;}
+}
+@keyframes explosion4_animation{
+    from{}
+    to{opacity: 1;}
+}
+@keyframes line1_animation{
+    from{}
+    to{opacity: .4;}
+}
+@keyframes bot_animation{
+    from{}
+    to{opacity: 1;}
+}
+@keyframes bot1_animation{
+    from{}
+    to{opacity: 1;}}
+@keyframes bot2_animation{
+    from{}
+    to{opacity: 1;}}
+@keyframes bot3_animation{
+    from{}
+    to{width: 14px;}}
+@keyframes bot4_animation{
+    from{}
+    to{width: 14px;}
+}
+@keyframes bot5_animation{
+    from{}
+    to{width: 40px;}
+}

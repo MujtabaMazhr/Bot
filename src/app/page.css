@@ -1,0 +1,88 @@
+@font-face{
+    font-family: "Michroma";
+    src: url("/Michroma.ttf") format("truetype");
+    font-style: normal;
+}
+.container {
+    font-family: "Michroma",sans-serif;
+    font-weight: 1;
+}
+@keyframes animation1{
+    from{
+        opacity: 0;
+        left: -12px;
+    }
+    to{
+        left: 35px;
+        opacity: 1;
+    }
+}
+@keyframes animation2{
+    from{opacity: 1;}
+    to{opacity: 0;left:35px;}
+}
+@keyframes animation3{
+    from{opacity: 0;}
+    to{opacity: .5;}
+}
+@keyframes animation4{
+    from{opacity: .5;}
+    to{opacity: 0;}
+}
+.save_button{
+    display:flex;
+    justify-content:center;
+    background-image:linear-gradient(90deg, rgba(10,53,99,1) 0%,rgb(0, 0, 0) 50%,rgb(32, 127, 228) 100%);
+    width:150px;
+    height: 40px;
+    align-items: center;
+    border-radius:18px;
+    position:fixed;
+    font-size:medium;
+    background-size:140% 100%;
+    background-position:0% 0%;
+    transition:background-position ease-out 600ms;
+    margin-right: 30px;
+    z-index: 40;
+    cursor: default;
+    position: relative;
+    left: 0px;
+    top: 150px;
+}
+.save_button:hover{background-position: 100% 0%;}
+@keyframes div1_animation{
+    from{}
+    to{width: 40px;}
+}
+@media (min-width:960px){
+    .model_container{
+        position: relative;
+        left: 15vw;
+    }
+}
+@keyframes animation5{
+    from{}
+    to{
+        opacity: 1;
+        top: -430px;
+    }
+}
+@keyframes animation6{
+    from{}
+    to{
+        opacity: 1;
+        left: 0px;
+    }
+}
+@keyframes box_container_animation{
+    from{}
+    to{gap: 50px;}
+}
+@keyframes box1_animation{
+    from{}
+    to{width: 260px;}
+}
+@keyframes text2_animation{
+    from{}
+    to{opacity: 1;}
+}
