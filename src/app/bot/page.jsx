@@ -20,7 +20,7 @@ export default function Bot(){
     const fetching = await fetch("/api/user_data",{
       method: "POST",
       headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({"profile_pic":picture,"username":username,"password":password,"type":type})
+      body: JSON.stringify({"username":username,"password":password,"type":type})
     });
     const response = await fetching.json();
     return response;
@@ -28,18 +28,18 @@ export default function Bot(){
   async function sendProfilePic(picture,type){
     let data = await sendPic(picture,type);
   }
-  async function getProfilePic(){
+  /*async function getProfilePic(){
     const fetching = await fetch(`/api/user_data?username=${username}&password=${password}`);
     const response = await fetching.json();
     return response;
-  }
-  async function getPic(){
+  }*/
+  /*async function getPic(){
     let data = await getProfilePic();
     if (typeof data.message=="object"){setProfilePic(URL.createObjectURL(new Blob([new Uint8Array(data.message)],{type: data.type})));}
     else{setProfilePic(data.message);}
-  }
-  getPic();
-  function userPic(){
+  }*/
+  //getPic();
+  /*function userPic(){
     return(
       <div style={{backgroundColor:"rgb(25,25,25)",width:"300px",height:"350px",borderRadius:"12px"}}>
         <div style={{display:"flex",justifyContent:"center"}}>
@@ -50,7 +50,7 @@ export default function Bot(){
             reader.onloadend = ()=>{
               if (reader.result){
                 const uint8Array = new Uint8Array(reader.result);
-                sendProfilePic(Array.from(uint8Array),event.target.files[0].type);
+                //sendProfilePic(Array.from(uint8Array),event.target.files[0].type);
               }
             }
           }} accept="image/*"></input></div>
@@ -65,7 +65,7 @@ export default function Bot(){
         </div>
       </div>
     )
-  }
+  }*/
   function login(){
     return(
         <>
@@ -161,14 +161,10 @@ export default function Bot(){
         <div style={{position:"relative",top:"-100vh"}}>
           <div style={{position:"relative",top:"0vh",opacity:`${container_opacity}`}}>
             {username==null&&<img src="https://github.com/MujtabaMazhr/Images/blob/main/person_icon.png?raw=true" style={{width:"40px",filter:"brightness(100)",borderRadius:"50px",position:"relative",left:"27px",top:"30px"}} onClick={()=>{doLogin(true);}}></img>}
-            {(do_login==false&&username!=null&&username!=""&&profile_pic!="")&&<img src={`${profile_pic}`} style={{width:"40px",zIndex:"101",borderRadius:"50px",position:"relative",left:"30px",top:"45px",position:"fixed"}} onClick={()=>{/*sidebar_ref.current.style.animation = "sidebar_animation2 500ms ease-in 0s 1 alternate forwards"*/}}></img>}
-            {/* */}
-
           </div>
           <div style={{position:"relative",top:"30vh",display:"flex",justifyContent:"center",opacity:`${container_opacity}`}}>
             {do_login==true&&login()}
-            {(do_login==false&&username!=null&&username!=""&&profile_pic=="")&&userPic()}
-            {(do_login==false&&username!=null&&username!=""&&profile_pic!="")&&content()} 
+            {(do_login==false&&username!=null&&username!="")&&content()} 
           </div>
           <div style={{position:"relative",left:"20vw",width:"50vw",top:"0vh",opacity:`${container_opacity}`}}>
             <div style={{opacity:"0"}}>Queries</div>
@@ -198,13 +194,13 @@ export default function Bot(){
                 apps_ui_ref.current.style.animation = "apps_animation2 800ms ease-in 0s 1 alternate forwards";
                 setTimeout(()=>{setShowApplications(false);setContainerOpacity(1);},1000);
               }}></img>
-              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",textDecoration:"underline",marginLeft:"10px",marginTop:"30px"}} onClick={()=>{window.location.href = "/generate_media"}}>Find Media</div>
+              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"10px",marginTop:"30px"}} onClick={()=>{window.location.href = "/generate_media"}}>Generate Media</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"120px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
-              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",textDecoration:"underline",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/bot"}}>Chat</div>
+              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/bot"}}>Chat</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"70px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
-              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",textDecoration:"underline",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/play_games"}}>Play Games</div>
+              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/play_games"}}>Play Games</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"120px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
-              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",textDecoration:"underline",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/tasks_reminder"}}>Tasks Reminder</div>
+              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/tasks_reminder"}}>Tasks Reminder</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"150px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
             </div>}
         </div>
