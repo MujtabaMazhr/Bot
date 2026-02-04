@@ -55,7 +55,7 @@ export default function App(){
                   <div style={{position:"relative",top:"-300px",left:"44%"}}><ModelViewer rotate3={rotation}></ModelViewer></div>
                   <div style={{position:"relative",left:"-100vw",backgroundColor:"red",width:"50px",height:"50px",animation:"div1_animation 20ms ease-in-out 0s infinite alternate forwards"}} onAnimationIteration={()=>{setRotation(rotation+1);}}></div>
                 </div>
-                {show_text1.current==true&&<div className="text1" style={{width:"240px",position:"relative",top:"-410px",left:"5%",opacity:"0",animation:"animation5 1.2s ease-in 0s 1 alternate forwards"}}>The Friendly AI with whom You can spend Your Time, Play Games and Research on Web </div>}
+                {show_text1.current==true&&<div className="text1" style={{width:"240px",position:"relative",top:"-410px",left:"5%",opacity:"0",animation:"animation5 1.2s ease-in 0s 1 alternate forwards"}}>The Friendly AI with whom You can spend Your Time and Research on Web </div>}
                 <div style={{width:"100vw",backgroundColor:"red",position:"relative",top:"-560px",opacity:"0"}} ref={text1_ref}>Hello</div>
                 <div ref={text2_ref} style={{width:"100vw",backgroundColor:"green",position:"relative",top:"-200px",opacity:"0"}}>Hello2</div>
                 {show_text2.current==true&&<div style={{position:"relative",top:"-265px",left:"-30px",opacity:"0",animation:"animation6 2s ease-in 0s 1 alternate forwards"}}>The Upcoming AI Agent - Bot</div>}
@@ -67,23 +67,6 @@ export default function App(){
                 }} style={{width:"100%",height:"10%",backgroundColor:"white",borderRadius:"100px",position:"fixed",top:"80vh",left:"0vw",opacity:"0"}}></div>
               </div>
               {show_text2.current==true&&<div style={{display:"flex",flexWrap:"wrap",cursor:"default",position:"relative",top:"-180px",justifyContent:"center",animation:"box_container_animation 1300ms ease-out 0s 1 alternate forwards"}}>
-                <div style={{width:"10px",borderRadius:"8px",height:"380px",animation:"box1_animation 1300ms ease-out 0s 1 alternate forwards",boxShadow:"0px 0px 10px 3px rgb(66, 7, 138)",backgroundColor:"rgb(59, 7, 122)",position:"relative",left:"0px",display:"flex",justifyContent:"center",alignItems:"center"}}>
-                  <div style={{width:"85%",height:"85%",backgroundColor:"rgb(37, 4, 78)",borderRadius:"18px",paddingTop:"75px",paddingLeft:"20px",display:"flex",flexWrap:"wrap"}}>
-                    <div style={{animation:"text2_animation 100ms ease-in-out 2s 1 alternate forwards",opacity:"0"}}>
-                      Play Games with Bot, Use it Like a Childhood Friend and Pass Your Free Time with Happiness and Joy.
-                      <DotLottieReact
-                        src="https://lottie.host/770c1336-30fa-4e64-9141-51f6fdd4908d/5HrAWFqRvq.lottie"
-                        loop
-                        autoplay
-                        style={{width:"130px",height:"340px",position:"relative",top:"-100px",left:"20px"}}
-                        onClick={()=>{
-                          if (profile_name!=""){window.location.href = "/play_games";}
-                          else{window.location.href = "/bot"}
-                        }}
-                      />
-                    </div>
-                  </div>  
-                </div>
                 <div style={{width:"10px",borderRadius:"8px",height:"380px",animation:"box1_animation 1300ms ease-out 0s 1 alternate forwards",boxShadow:"0px 0px 10px 3px rgb(14, 20, 203)",backgroundColor:"rgb(14, 20, 203)",position:"relative",left:"0px",display:"flex",justifyContent:"center",alignItems:"center"}}>
                   <div style={{width:"85%",height:"85%",backgroundColor:"rgb(18, 22, 137)",borderRadius:"18px",paddingTop:"75px",paddingLeft:"20px",display:"flex",flexWrap:"wrap"}}>
                     <div style={{animation:"text2_animation 100ms ease-in-out 2s 1 alternate forwards",opacity:"0"}}>
