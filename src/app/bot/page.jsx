@@ -187,19 +187,17 @@ export default function Bot(){
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgba(13, 95, 184, 1) 100%)",width:"15px",height:"15px",borderRadius:"2px"}} ></div>
               <div style={{background:"linear-gradient(90deg, rgba(13, 95, 184, 1) 0%,rgba(3, 23, 48, 1) 100%)",width:"15px",height:"15px",borderRadius:"23px"}}></div>
             </div>
-          </div>
+          </div>          
           {show_applications==true&&
             <div style={{backgroundColor:"rgb(15,15,15)",width:"45%",height:"57%",animation:"apps_animation 800ms ease-in 0s 1 alternate forwards",position:"relative",left:"100vw",top:"200px",position:"fixed",zIndex:"102",borderRadius:"16px",cursor:"default"}} ref={apps_ui_ref}>
               <img src="https://cdn-icons-png.flaticon.com/512/758/758811.png" style={{width:"20px",transform:"scaleX(-1)",position:"relative",top:"-70px",left:"15px"}} onClick={()=>{
                 apps_ui_ref.current.style.animation = "apps_animation2 800ms ease-in 0s 1 alternate forwards";
                 setTimeout(()=>{setShowApplications(false);setContainerOpacity(1);},1000);
               }}></img>
-              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"10px",marginTop:"30px"}} onClick={()=>{window.location.href = "/generate_media"}}>Find Media</div>
+              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"10px",marginTop:"30px"}} onClick={()=>{window.location.href = "/generate_media"}}>Generate Media</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"120px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
               <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/bot"}}>Chat</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"70px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
-              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/play_games"}}>Play Games</div>
-              <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"120px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
               <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/tasks_reminder"}}>Tasks Reminder</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"150px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
             </div>}
