@@ -48,6 +48,7 @@
     position: relative;
     left: 0px;
     top: 150px;
+    user-select: none;
 }
 .save_button:hover{background-position: 100% 0%;}
 @keyframes div1_animation{
