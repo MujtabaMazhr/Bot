@@ -194,7 +194,7 @@ export default function Bot(){
                 apps_ui_ref.current.style.animation = "apps_animation2 800ms ease-in 0s 1 alternate forwards";
                 setTimeout(()=>{setShowApplications(false);setContainerOpacity(1);},1000);
               }}></img>
-              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"10px",marginTop:"30px"}} onClick={()=>{window.location.href = "/generate_media"}}>Generate Media</div>
+              <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"10px",marginTop:"30px"}} onClick={()=>{window.location.href = "/generate_media"}}>Find Media</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"120px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
               <div style={{backgroundImage:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",WebkitBackgroundClip:"text",backgroundClip:"text",WebkitTextFillColor:"transparent",display:"inline-block",marginLeft:"30px",marginTop:"30px"}} onClick={()=>{window.location.href = "/bot"}}>Chat</div>
               <div style={{background:"linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)",width:"70px",height:"1px",marginLeft:"30px",marginTop:"3px"}}></div>
