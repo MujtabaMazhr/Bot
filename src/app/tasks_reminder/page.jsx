@@ -9,7 +9,7 @@ export default function Tasks_Reminder() {
     let [index1,setIndex1] = useState(0), index2 = useRef(-1), [show_warning1, setShowWarning1] = useState(false), [ids, setIds] = useState([0]), [background_index, setBackgroundIndex] = useState(0), [task_container_class, taskContainerClass] = useState(""), [make_changes, setMakeChanges] = useState([false, false, false]), [values, setValues] = useState([]), [save_timer,setSaveTimer] = useState(null), [save_alarm,setSaveAlarm] = useState(null), [working_alarms,setWorkingAlarms] = useState([]), [working_timers,setWorkingTimers] = useState([]);
     let changes_made = useRef(null), backgrounds_array = useRef([]);
     let background_images = [<img src="./background1.jpg" style={{ width: "200px", height: "140px", borderRadius: "8px" }}></img>, <img src="./background2.png" style={{ width: "200px", height: "140px", borderRadius: "8px" }}></img>, <img src="./background3.png" style={{ width: "200px", height: "140px", borderRadius: "8px" }}></img>, <img src="./background4.png" style={{ width: "200px", height: "140px", borderRadius: "8px" }}></img>], background_images_refs = [useRef(null), useRef(null), useRef(null), useRef(null)],[bg_img_src,setBgImgSrc] = useState("./background1.jpg");
-    let timers_refs = [useRef(null), useRef(null), useRef(null), useRef(null)], [timer_type, setTimerType] = useState("timer"), [timer, setTimer] = useState([0, 0, 0]), [alarm, setAlarm] = useState([0, 0]), [timers, setTimers] = useState([]), [alarms, setAlarms] = useState([]),[profile_name,setProfileName] = useState(""),timers_added = useRef(false),voices = useRef("");
+    let timers_refs = [useRef(null), useRef(null), useRef(null), useRef(null)], [timer_type, setTimerType] = useState("timer"), [timer, setTimer] = useState([0, 0, 0]), [alarm, setAlarm] = useState([0, 0]), [timers, setTimers] = useState([]), [alarms, setAlarms] = useState([]),[profile_name,setProfileName] = useState(""),timers_added = useRef(false),voices = useRef(""),speaker = useRef(false);
     useEffect(()=>{voices.current = speechSynthesis.getVoices();},[]);
     useEffect(()=>{
         if (typeof window!="undefined"){
@@ -21,9 +21,10 @@ export default function Tasks_Reminder() {
             const utterance = new SpeechSynthesisUtterance(`${argument}`);
             utterance.voice = speechSynthesis.getVoices()[0];
             //utterance.volume= 4
-            if (speechSynthesis.getVoices().length>0){window.speechSynthesis.speak(utterance);}
+            if (utterance.voice==speechSynthesis.getVoices()[0]){window.speechSynthesis.speak(utterance);}
         }
     }
+    //useEffect(()=>{speak("Hello World")},[]);
     useEffect(()=>{for (let index=1;index<=100;index++){
         setIds(previous=>[...previous,index]);
         if (do_time.length<=0){doTime(previous=>[...previous,false]);}
@@ -200,9 +201,8 @@ export default function Tasks_Reminder() {
                 //console.log("TIme is Here: ", new Date().toLocaleTimeString());
                 //console.log("Working Alarm: ", working_alarms);
                 for (let index = 0; index <= working_alarms.length - 1; index++) {
-                    if ((Number(String(new Date().toLocaleTimeString()).slice(0, 2)) - number == Number(String(working_alarms[index][0]))) && (Number(String(new Date().toLocaleTimeString()).slice(3, 5)) == Number(String(working_alarms[index][1])))&&(String(new Date().toLocaleTimeString()).slice(6,8)=="01")){
-                        speak(notes[background_index][0]);
-                        timers_added.current = null;
+                    if ((Number(String(new Date().toLocaleTimeString()).slice(0, 2)) - number == Number(String(working_alarms[index][0]))) && (Number(String(new Date().toLocaleTimeString()).slice(3, 5)) == Number(String(working_alarms[index][1])))&&(String(new Date().toLocaleTimeString()).slice(6,8)=="01")&&speaker.current==true){
+                        timers_added.current = null;speak(notes[background_index][0]);speaker.current = false;
                     }
                 }
             }
@@ -212,11 +212,11 @@ export default function Tasks_Reminder() {
             if (do_timer[index]==true){
                 //console.log("Working TImer: ", working_timers[index]);
                 for (let index = 0; index <= working_timers.length - 1; index++) {
-                    if ((Number(String(new Date().toLocaleTimeString()).slice(0, 2))-number==Number(String(working_timers[index][0]))) && (Number(String(new Date().toLocaleTimeString()).slice(3, 5)) == Number(String(working_timers[index][1])))&&(Number(String(new Date().toLocaleTimeString()).slice(6,8))==Number(String(working_timers[index][2])))) {timers_added.current = null;}
+                    if ((Number(String(new Date().toLocaleTimeString()).slice(0, 2))-number==Number(String(working_timers[index][0]))) && (Number(String(new Date().toLocaleTimeString()).slice(3, 5)) == Number(String(working_timers[index][1])))&&(Number(String(new Date().toLocaleTimeString()).slice(6,8))==Number(String(working_timers[index][2])))&&speaker.current==true) {timers_added.current = null;speak(notes[background_index][0]);speaker.current = false;}
                 }
             }
         }
-        if (timers_added.current==null){speak(notes[background_index][0]);timers_added.current = false;}
+        if (timers_added.current==null){timers_added.current = false;}
     }
     //if (remind_task.current==true){useEffect(()=>{speak();remind_task.current = false;console.log("Condition Satisfied. ",remind_task.current);},[]);}
     setInterval(() => { ringReminder(); }, 200);
@@ -243,7 +243,7 @@ export default function Tasks_Reminder() {
                             }}></img>
                         </div>
                         <div style={{ width: "55vw", height: "85vh", backgroundColor: "black", position: "relative", left: "100vw", animation: `${nav_animation}`, position: "relative", top: "-140px", zIndex: "200", borderRadius: "10px" }}>
-                            <div style={{ position: "relative", top: "130px", left: "0px", opacity: "1", gap: "30px", animation: do_navigation == true ? "buttons_animation 650ms ease-in-out 1s 1 alternate forwards" : "buttons_animation2 650ms ease-in-out 1s 1 alternate forwards" }}>
+                            <div style={{ position: "relative", top: "130px", left: "0px", opacity: "1", gap: "30px", animation: do_navigation == true ? "buttons_animation 650ms ease-in-out 1s 1 alternate forwards" : "buttons_animation2 650ms ease-in-out 1s 1 alternate forwards",userSelect:"none" }}>
                                 {/*rgb(77,156,240) 0%, */}
                                 <div style={{ backgroundImage: "linear-gradient(90deg, rgb(77,156,240) 0%,rgb(13, 95, 184) 40%,rgba(6, 35, 65, 1) 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", display: "inline-block", cursor: "default" }} onClick={() => {
                                     if (notes[0] == null) { index2.current = index2.current + 1; setNotes(previous => [...previous, []]);setAddTasks(true); }
@@ -397,7 +397,7 @@ export default function Tasks_Reminder() {
                                                             let array = [...previous];
                                                             array[background_index] = true;
                                                             return array;
-                                                        });timers_added.current = true;
+                                                        });timers_added.current = true;speaker.current = true;
                                                 }
                                                 else {
                                                     setTimer(previous => {
@@ -417,7 +417,7 @@ export default function Tasks_Reminder() {
                                                             let array = [...previous];
                                                             array[background_index] = true;
                                                             return array;
-                                                        });timers_added.current= true;
+                                                        });timers_added.current= true;speaker.current = true;
                                                 }
                                                 else {
                                                     setAlarm(previous => {
